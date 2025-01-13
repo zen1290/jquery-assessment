@@ -1,7 +1,15 @@
-d= new Date();
-t= new time();
 
+// t= new time();
 
-document.getElementById('date').innerHTML= d.date();
-document.getElementById('time').innerHTML= t.time();
+function x()
+{
+    d= new Date();
+    document.getElementById('date').innerHTML= (d);
+    setTimeout('x()',1000);
+    console.log('hi');
+    
+}
+x();
+
+// document.getElementById('time').innerHTML= ();
 
