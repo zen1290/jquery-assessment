@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>
+        <strong>Date Of Birth*</strong><br />
+        <input type="date" id="DateOfBirth" name="DateOfBirth" value="" size="40" class="form-control" />
+    </span>
+    
+    <span>
+        <strong>Age*</strong><br />
+        <input type="text" id="Age" name="Age" value="" size="40" class="form-control" placeholder="Enter Age" disabled="disabled" />
+    </span>
+    
+    
+   
+    
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    
+
+    
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    $('#DateOfBirth').change(function () {
+    var now = new Date();   //Current Date
+    var past = new Date($('#DateOfBirth').val());  //Date of Birth
+    if (past > now) {
+    alert('Entered Date is Greater than Current Date');
+    return false;
+    }
+    var nowYear = now.getFullYear();  //Get current year
+    var pastYear = past.getFullYear();//Get Date of Birth year
+    
+    var age = nowYear - pastYear;  //calculate the difference
+    $('#Age').val(age);
+    })
+    })
+    </script>
+    
+</body>
+</html>
